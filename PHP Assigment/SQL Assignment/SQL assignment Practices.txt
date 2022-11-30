@@ -1,0 +1,114 @@
+<<<<<<<<<<<<<<<<<SQL QUERIES<<<<<<<<<======>>>>>>>>>>>>>>>>
+
+create table employees(
+    emp_id int not null,
+    first_name varchar(20),
+    last_name varchar(20),
+    salary int,
+    PRIMARY KEY(emp_id)
+    );
+SELECT * FROM employees;
+DESCRIBE employees;
+ALTER TABLE employees ADD COLUMN contact int(10);
+ALTER TABLE employees CHANGE salary job_salary int ;
+ALTER TABLE employees CHANGE job_salary salary int ;
+INSERT INTO employees (emp_id,first_name,last_name,salary) VALUES (101,'Steven','king',10000);
+INSERT INTO employees (emp_id,first_name,last_name,salary) VALUES (102,'Edwin','Thomas',15000);
+INSERT INTO employees (emp_id,first_name,last_name,salary) VALUES (103,'Harry','Potter',20000);
+INSERT INTO employees (emp_id,first_name,last_name,salary) VALUES (104,'Spider','Man',25000);
+UPDATE employees SET last_name = 'hathway' WHERE emp_id=101;
+DELETE FROM employees WHERE emp_id IN (104);
+ SELECT * FROM employees WHERE emp_id=101;
+ SELECT * FROM employees WHERE salary=15000;
+ SELECT * FROM employees WHERE last_name = 'Thomas';
+SELECT * FROM employees WHERE first_name = 'Steven' AND salary=10000;
+SELECT * FROM employees WHERE last_name = 'Potter';
+SELECT * FROM employees WHERE last_name = 'Potter' AND emp_id=103;
+SELECT * FROM employees WHERE first_name = 'Harry' OR last_name='Thomas';
+SELECT * FROM employees WHERE salary>10000;
+SELECT * FROM employees WHERE salary>=10000;
+SELECT * FROM employees WHERE salary<20000;
+SELECT * FROM employees WHERE first_name!='Harry';
+SELECT * FROM employees WHERE salary BETWEEN 10000 AND 20000;
+SELECT * FROM employees WHERE first_name like 'Steven';
+SELECT * FROM employees WHERE salary is null;
+SELECT * FROM employees WHERE salary in (10000,15000,20000);
+SELECT DISTINCT(first_name) FROM employees;
+SELECT AVG(salary) FROM employees;
+SELECT COUNT(salary) FROM employees;
+SELECT MIN(salary) FROM employees;
+SELECT MAX(salary) FROM employees;
+ALTER TABLE employees ADD COLUMN dept varchar(20);
+UPDATE employees SET dept='sales' WHERE emp_id=101;
+UPDATE employees SET dept='Education' WHERE emp_id=102;
+UPDATE employees SET dept='Tech' WHERE emp_id=103;
+SELECT first_name, MAX(salary),dept FROM employees GROUP BY dept;
+SELECT first_name,MAX(salary),dept FROM employees GROUP BY dept HAVING COUNT(dept)>=2;
+SELECT * FROM employees ORDER by salary DESC;
+SELECT * FROM employees ORDER by salary ASC;
+
+
+CREATE TABLE product1(
+    category_id int,
+    product_name varchar(20)
+    );
+    
+    SELECT * FROM product1;
+
+INSERT INTO product1 VALUES(1,'Nokia');
+INSERT INTO product1 VALUES(2,'Samsung');
+INSERT INTO product1 VALUES(3,'Hp');
+INSERT INTO product1 VALUES(6,'Nikon');
+
+
+CREATE TABLE product2(
+    category_id int,
+    product_name varchar(20)
+    );
+
+INSERT INTO product2 VALUES(1,'Samsung');
+INSERT INTO product2 VALUES(2,'LG');
+INSERT INTO product2 VALUES(3,'Hp');
+INSERT INTO product2 VALUES(5,'Dell');
+INSERT INTO product2 VALUES(6,'Apple');
+INSERT INTO product2 VALUES(10,'Playstation');
+
+SELECT product_name from product1
+UNION
+SELECT product_name FROM product2;
+
++SELECT product_name from product1
+UNION ALL
+SELECT product_name FROM product2;
+
+CREATE TABLE department(
+    dept_id int,
+    dept varchar(20),
+    dept_loc varchar(20)
+    );
+INSERT INTO  department VALUES(1,'content','chicago ');
+INSERT INTO  department VALUES(2,'support','new jersey');
+INSERT INTO  department VALUES(2,'sales','boston');
+UPDATE department SET dept_id=2 WHERE dept='support';
+UPDATE department SET dept_id=3 WHERE dept='sales';
+INSERT INTO department VALUES(4,'hr','chicago');
+INSERT INTO department VALUES(5,'operations ','new york');
+
+SELECT e.first_name,e.salary,d.dept,dept_loc
+FROM employees e
+INNER JOIN department d
+on e.dept=d.dept;
+
+
+SELECT e.first_name,e.salary,d.dept,d.dept,dept_loc
+FROM employees e
+LEFT JOIN department d
+on e.dept=d.dept;
+
+SELECT e.first_name,e.salary,d.dept,d.dept,dept_loc
+FROM employees e
+RIGHT JOIN department d
+on e.dept=d.dept;
+
+
+

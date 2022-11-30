@@ -1,0 +1,63 @@
+15/06/2022 :- 
+Offical website www.php.com
+
+PHP :- Pre-Processor Hypertext  - HTML/PHP
+-Created By Resmus Lerdoff In 1994 As An Opensource
+-Server Side Scripting Tools
+-Open Source
+
+xampp : cross plateform , apache server, MySql database , php,pearl....
+-MYSQL
+-OOPs consept
+-Array function's 
+-string Function's 
+wampp :windows
+nampp : macos
+lampp : linux
+
+Application:
+1). Desktop Application : c/c++ Python PHP ...Calculator,Weather,Notpod....
+2). Web Application : Programming Language - PHP,JAVA,PYTHON....
+3). Mobile Application : Android , IOS....
+Apache MySQL Database PHP Pearl.....
+
+Website : provide An Information From Anywhere In The World.
+URL : Uniform Resource Locator
+eg: https://www.tops-int.com/contact
+
+https : Hyper text Transfer Protocol
+www : World Wide Web
+tops-int : Domain Name 
+.com / .in : Extension  Eg. - .in/ .edu / .org 
+
+SDLC : SOFTWARE DEVELOPMENT LIFE CYCLE
+1). Requirment Gathering
+2). Analysis - Report - Time - Budget
+3). Designing - HTML/CSS....
+4). Implimentation(Coding)
+5). Testing
+6). Maintanance
+
+HTML : Hypertext markup language
+-Clientside scripting language 
+-Editor : notepad,subline,visual studio code...
+
+
+DIFFERENTIATE BETWEEN
+PRIMARY KEY AND quelyOREIGN KEY?
+
+==>PRIMARY KEY==>
+               Out Of One or more candidate keys
+the attribiute chosen by the database designer
+To uniquely identify the  tuples in a relation 
+is called the primary key of the relation.
+
+==>FOREIGN KEY==>
+                  A foreign key is used to represent the relationship between two relations.
+A foreign key is an attribute whose value is derived from the primary key of another relation.
+This means that any attribute of a relation (referencing),
+which is used to refer contents from another (referenced) relation,
+becomes foreign key if it refers to the primary key of referenced relation.
+
+
+

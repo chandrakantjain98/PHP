@@ -1,0 +1,200 @@
+A) What is jQuery?
+
+==>jQuery is a lightweight, "write less, do more", JavaScript library
+
+The jQuery library contains the following features
+1.HTML/DOM manipulation
+2.CSS manipulation
+3.HTML event methods
+4.Effects and animations
+5.AJAX
+6.Utilities
+
+
+B) How are JavaScript and jQuery different? 
+
+==>JavaScript is a programming language. jQuery is an Application Programming Interface (API). JavaScript boosts up the execution of a program and saves the time required for connecting to the server. It provides numerous interfaces to developers for creating catchy web pages
+
+C) Which is the starting point of code execution in jQuery?
+
+==>The jQuery starts its code execution from the $(document). ready() function which is executed whenever the whole HTML DOM is loaded and is totally rendered by the browser, so that the event handlers work correctly without any errors. This $(document).
+
+
+D)Document Load Vs Window. Load() jQuery
+
+=>The key difference between $(document). ready() and $(window)load() event is that the code included inside onload function will run once the entire page(images, iframes, stylesheets,etc) are loaded whereas the $(document). ready() event fires before all images,iframes etc
+
+E)What is the difference between prop and attr?
+
+==>prop() method provides a way to explicitly retrieve property values, while . attr() retrieves attributes. For example, selectedIndex, tagName, nodeName, nodeType, ownerDocument, defaultChecked, and defaultSelected should be retrieved and set with the . prop() method
+
+F)Explain Difference Between JQuery And JavaScript? 
+
+==>JavaScript is an independent language and can exist on its own. jQuery is a JavaScript library
+
+G)How We Can Select The Specified <li> Element From The ListOf <li> 
+Elements In <ul>?
+ 
+==>
+<ol>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ol>
+
+<ul>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul>
+
+H)In <table> Design Change The Color Of Even <tr> Elements To
+
+====>
+<!DOCTYPE html>
+<html>
+      
+<head>
+    <title>
+        Set alternate row in table
+    </title>
+      
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+          
+        th, td {
+            text-align: left;
+            padding: 8px;
+        }
+          
+        tr:nth-child(odd) {
+            background-color: Lightgreen;
+        } </style>
+</head>
+  
+<body>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Designation</th>
+            <th>Salary</th>
+        </tr>
+          
+        <tr>
+            <td>Steve</td>
+            <td>Manager</td>
+            <td>1, 00, 000</td>
+        </tr>
+          
+        <tr>
+            <td>SURAJ</td>
+<td>Assistant Manager</td>
+            <td>50, 000</td>
+        </tr>
+          
+        <tr>
+            <td>Khushboo</td>
+            <td>Analysist</td>
+            <td>65, 000</td>
+        </tr>
+          
+        <tr>
+            <td>Kartik</td>
+            <td>Worker</td>
+            <td>20, 000</td>
+        </tr>
+          
+        <tr>
+            <td>Saksham</td>
+            <td>Worker</td>
+            <td>20, 000</td>
+        </tr>
+    </table>
+</body> 
+
+J)How We Can Implement Animation Effects In Jquery?
+
+==>  
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script> 
+$(document).ready(function(){
+  $("button").click(function(){
+    $("div").animate({left: '250px'});
+  });
+});
+</script> 
+</head>
+<body>
+
+<button>Start Animation</button>
+
+<p> THE tops</tops> 
+
+</body>
+</html>
+
+
+K)Get state data by country selection (Ajax)
+
+
+
+
+
+
+
+
+M) Image uploading with preview
+
+
+==>
+(html file)
+<html>
+<body>
+
+ <input type='file' onchange="readURL(this);" />
+<img id="blah" src="http://placehold.it/180" alt="your image" />
+</body>
+</html>
+
+cssfile
+
+<html>
+<body>
+img{
+  max-width:180px;
+}
+input[type=file]{
+padding:10px;
+background:#2d2d2d;}
+</body>
+</html>
+
+
+js file
+<html>
+<body>
+
+unction readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $('#blah')
+                        .attr('src', e.target.result);
+                };
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+</body>
+</html>
+
+
+
+

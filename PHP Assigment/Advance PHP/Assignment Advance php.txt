@@ -1,0 +1,321 @@
+___________________________________________
+Q.01 What Is Object Oriented Programming?
+___________________________________________
+
+{OOP stands for Object-Oriented Programming.
+
+Procedural programming is about writing procedures or functions that perform operations on the data, while object-oriented programming is about creating objects that contain both data and functions.
+
+Object-oriented programming has several advantages over procedural programming:
+
+OOP is faster and easier to execute
+OOP provides a clear structure for the programs
+OOP helps to keep the PHP code DRY "Don't Repeat Yourself", and makes the code easier to maintain, modify and debug
+OOP makes it possible to create full reusable applications with less code and shorter development time.}
+_______________________________________________________
+Q.2 What Are Properties Of Object Oriented Systems?
+_______________________________________________________
+
+{There are 4 major principles that make an language Object Oriented.
+These are 
+         [01.Encapsulation]
+          
+          [02.Data Abstraction]
+          
+                [03.Polymorphism]
+          
+                   [04.Inheritance]
+______________________________________________________
+Q.3 What Is Difference Between Class And Interface?
+______________________________________________________
+     
+========>Differences between a Class and an Interface<======
+
+[A class can be instantiated i.e, objects of a class can be created. An Interface cannot be instantiated i.e, objects cannot be created. Classes does not support multiple inheritance. Interface supports multiple inheritance.]
+
+_________________________
+Q.4 What Is Overloading?
+_________________________
+
+Overloading in PHP provides means to dynamically CREATE properties and methods. These dynamic entities are processed via magic methods one can establish in a class for various action types.
+
+The overloading methods are invoked when interacting with properties or methods that have not been declared or are not visible in the current scope. The rest of this section will use the terms inaccessible properties and inaccessible methods to refer to this combination of declaration and visibility.
+
+All overloading methods must be defined as public
+______________________
+Property overloading.
+______________________
+public __set(string $name, mixed $value): void
+public __get(string $name): mixed
+public __isset(string $name): bool
+public __unset(string $name): void
+__set() is run when writing data to inaccessible (protected or private) or non-existing properties.
+
+__get() is utilized for reading data from inaccessible (protected or private) or non-existing properties.
+
+__isset() is triggered by calling isset() or empty() on inaccessible (protected or private) or non-existing properties.
+
+__unset() is invoked when unset() is used on inaccessible (protected or private) or non-existing properties.
+
+The $name argument is the name of the property being interacted with. The __set() method's $value argument specifies the value the $name'ed property should be set to.
+
+Property overloading only works in object context. These magic methods will not be triggered in static context. Therefore these methods should not be declared static. A warning is issued if one of the magic overloading methods is declared static.
+___________________________________________________________________________________
+Q.5 What Is T_PAAMAYIM_NEKUDOTAYIM (Scope Resolution Operator (::) with Example
+___________________________________________________________________________________
+
+The scope resolution operator ( :: ) is used for several reasons. 
+
+For example: If the global variable name is same as local variable name, the scope resolution operator will be used to call the global variable. It is also used to define a function outside the class and used to access the static variables of class.
+
+
+___________________________________________________________________________________
+Q.6 What are the differences between abstract classes and interfaces?
+
+Here’s a table depicting the difference between abstract and interface class in PHP.
+ 
+======>INTERFACE CLASS<======
+
+1.Interface class supports multiple inheritance feature.
+2.This does not contain a data member.
+3.The interface does not allow containers.
+4.An interface class only contains incomplete members which refer to the signature of the member.
+5.Since everything is assumed to be public, an interface class does not have access modifiers by default.
+6.Any member of an interface cannot be static.
+
+======>ABSTRACT CLASS<======
+
+1.Abstract class does not support multiple inheritances.
+2.Abstract class does contain a data member.
+3.The abstract class supports containers.
+4.Abstract class contains both incomplete(i.e. abstract) and complete members.
+5.An abstract class can contain access modifiers within subs, functions, and properties.
+6.Only a complete member of the abstract class can be static.
+
+______________________________________________________________________________________________________________
+Q.7 Define Constructor and Destructor?
+______________________________________________________________________________________________________________
+
+======>CONSTRUCTOR<======
+Constructors are special member functions for initial settings of newly created object instances from a class,
+which is the key part of the object-oriented concept in PHP5.
+==>Constructors are the very basic building blocks that define the future object and its nature.
+==>You can say that the Constructors are the blueprints for object creation providing values for member functions and member variables.
+==>Once the object is initialized,the constructor is automatically called.
+==>Destructors are for destroying objects and automatically called at the end of execution.
+
+======>Advantages of using Constructors<====== 
+ 
+
+*Constructors provides the ability to pass parameters which are helpful in automatic initialization of the member variables during creation time .
+*The Constructors can have as many parameters as required and they can be defined with the default arguments.
+*They encourage re-usability avoiding re-initializing whenever instance of the class is created .
+*You can start session in constructor method so that you don’t have to start in all the functions everytime.
+*They can call class member methods and functions.
+*They can call other Constructors even from Parent class.
+
+Note : The __construct() method always have the public visibility factor.
+
+======>DESTRUCTOR<====== 
+Destructor is also a special member function which is exactly the reverse of constructor method and is called when an instance of the class is deleted from the memory.
+Destructors (__destruct ( void): void) are methods which are called when there is no reference to any object of the class or goes out of scope or about to release explicitly. 
+They don’t have any types or return value.
+It is just called before de-allocating memory for an object or during the finish of execution of PHP scripts or as soon as the execution control leaves the block. 
+Global objects are destroyed when the full script or code terminates.
+Cleaning up of resources before memory release or closing of files takes place in the destructor method.
+whenever they are no longer needed in the code.
+The automatic destruction of class objects is handled by PHP Garbage Collector.
+
+======>Advantages of destructors<====== 
+ 
+
+*Destructors give chance to objects to free up memory allocation,
+*So that enough space is available for new objects or free up resources for other tasks.
+*It effectively makes programs run more efficiently and are very useful as they carry out clean up tasks.
+
+======>Comparison between __constructors and __destructors:<======
+
+**CONSTRUCTORS**
+1.Accepts one or more arguments.
+2.Function name is _construct().
+3.It has same name as the class.
+4.Constructor is involved automatically when the object is created.
+5.Used to initialize the instance of a class.
+6.Used to initialize data members of class.
+7.Constructors can be overloaded.
+8.It is called each time a class is instantiated or object is created.
+9.Allocates memory.
+10.Multiple constructors can exist in a class.
+11.If there is a derived class inheriting from base class and the object of the derived class is created, 
+   the constructor of base class is created and then the constructor of the derived class.
+12.The concept of copy constructor is allowed where an object is initialized from the address of another object.
+
+**DESTRUCTORS**
+1.No arguments are passed. Its void.
+2.function name is _destruct()
+3.It has same name as the class with prefix ~tilda.
+4.Destructor is involved automatically when the object is destroyed.
+5.Used to de-initialize objects already existing to free up memory for new accommodation.
+6.Used to make the object perform some task before it is destroyed.
+7.Destructors cannot be overloaded.
+8.It is called automatically at the time of object deletion .
+9.It deallocates memory.
+10.Only one Destructor can exist in a class.
+11.The destructor of the derived class is called and then the destructor of base class just the reverse order of 
+constructor.
+12.The concept of copy constructor is NOT allowed.
+
+
+_______________________________________________________________________________________
+Q.8 How to Load Classes in PHP?
+_______________________________________________________________________________________
+PHP file Should Contain The Contact Class. Before Using A Class, You Need To: First, Define The Class In A File. Second, Load It Using The require , require_once , include , or include_once statement.
+
+_________________________________________________________________________________________
+Q.9 How to Call Parent Constructor?
+_________________________________________________________________________________________
+In order to run a parent constructor, a call to parent::__construct() within the child constructor is required. If the child does not define a constructor then it may be inherited from the parent class just like a normal class method (if it was not declared as private). $obj = new OtherSubClass(); ?>
+
+__________________________________________________________________________________________
+Q.10 Are Parent Constructor Called Implicitly When Create An ObjectOf Class?
+__________________________________________________________________________________________
+Parent constructors are not called implicitly if the child class defines a constructor. In order to run a parent constructor, a call to parent::__construct() within the child constructor is required.
+
+_________________________________________________________________________________________
+Q.11 What Happen, If Constructor Is Defined As Private Or Protected?
+_________________________________________________________________________________________
+The constructor may be made private or protected to prevent it from being called externally. If so, only a static method will be able to instantiate the class. Because they are in the same class definition they have access to private methods, even if not of the same object instance.
+
+__________________________________________________________________________________________
+Q.12 What are PHP Magic Methods/Functions? List them.
+__________________________________________________________________________________________
+Magic methods are special methods which override PHP's default's action when certain actions are performed on an object. Caution. All methods names starting with __ are reserved by PHP. Therefore, it is not recommended to use such method names unless overriding PHP's behavior.
+
+The following method names are considered magical: 
+__construct(), 
+__destruct(), 
+__call(), 
+__callStatic(),
+__get(), 
+__set(),
+__isset(), 
+__unset(), 
+__sleep(), 
+__wakeup(), 
+__serialize(), 
+__unserialize(), 
+__toString(), 
+__invoke(), 
+__set_state(), 
+__clone(), and 
+__debugInfo().
+
+_____________________________________________________________________________________________
+Q.13 Write program for Static Keyword in PHP?
+_____________________________________________________________________________________________
+
+The static keyword is used to declare properties and methods of a class as static. Static properties and methods can be used without creating an instance of the class.
+
+The static keyword is also used to declare variables in a function which keep their value after the function has ended.
+
+********PROGRAM********
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+function add1() {
+  static $number = 0;
+  $number++;
+  return $number;
+}
+
+echo add1();
+echo "<br>";
+echo add1();
+echo "<br>";
+echo add1();
+?>
+
+</body>
+</html>
+
+
+******OUTPUT*****
+1
+2
+3
+
+___________________________________________________________________________________________
+Q.14  Create multiple Traits and use it in to a single class?
+___________________________________________________________________________________________
+
+====>PROGRAM<====
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<?php
+trait message1 {
+  public function msg1() {
+    echo "OOP is fun! "; 
+  }
+}
+
+class Welcome {
+  use message1;
+}
+
+$obj = new Welcome();
+$obj->msg1();
+?>
+ 
+</body>
+</html>
+
+
+====>OUTPUT<====
+
+OOP is fun
+
+______________________________________________________________________________________________
+Q.15 Write PHP Script of Object Iteration?
+______________________________________________________________________________________________
+
+========>OBJECT ITERATION PROGRAM<========
+
+<?php
+class MyClass
+{
+    public $var1 = 'value 1';
+    public $var2 = 'value 2';
+    public $var3 = 'value 3';
+
+    protected $protected = 'protected var';
+    private   $private   = 'private var';
+
+    function iterateVisible() {
+       echo "MyClass::iterateVisible:\n";
+       foreach ($this as $key => $value) {
+           print "$key => $value\n";
+       }
+    }
+}
+
+$class = new MyClass();
+
+foreach($class as $key => $value) {
+    print "$key => $value\n";
+}
+echo "\n";
+
+
+$class->iterateVisible();
+
+?>
+
+======>OUTPUT<======
+
+var1 => value 1 var2 => value 2 var3 => value 3 MyClass::iterateVisible: var1 => value 1 var2 => value 2 var3 => value 3 protected => protected var private => private var

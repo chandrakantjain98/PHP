@@ -1,0 +1,19 @@
+1.)
+DELIMITER //
+CREATE PROCEDURE my_pro(IN uname varchar(10))
+BEGIN
+SELECT * FROM customer  WHERE name = uname;
+END //
+DELIMITER //
+
+2.)DELIMITER //
+CREATE FUNCTION MarksFunction(marks int) RETURNS VARCHAR(10)
+BEGIN
+     DECLARE lvl varchar(10);
+     
+     IF marks > 20 THEN
+     SET lvl = 'sras';
+     ELSEIF (marks <=15) THEN
+     SET lvl = 
+END //
+DELIMITER //

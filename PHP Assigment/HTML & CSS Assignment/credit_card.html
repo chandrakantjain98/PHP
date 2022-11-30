@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="credit_card.css">
+</head>
+<body>
+  <form  method="post">
+    <table border="1" align="center" class="x">
+        <tr>
+            <td><i>Name:</i></td>
+            <td><input type="text" name="name" placeholder="Enter Your Name"></td>
+        <tr>
+            <td>email</td>
+            <td><input type="email" name="email" placeholder="Enter Your Email"></td>
+        <tr>
+            <tr>
+                <td>phone</td>
+                <td><input type="phone" name="phone" placeholder="Enter Your Number"></td>
+                <tr>
+                    <td>address</td>
+                    <td><input type="address" name="address" placeholder="Enter Your Address"></td>
+                <tr>
+                    <tr>
+                        <td>post code</td>
+                        <td><input type="post code" name="post code" placeholder="Enter Your Postal Code"></td>
+                        <tr>
+                            <tr>
+                                <td>country</td>
+                                <td><select name="country" required>
+                                    <option>-----Select-----</option>
+                                    <option India="">India</option>
+                                    <option USA="">USA</option>
+                                    <option UK="">UK</option>
+                                    <option Germany="">Germany</option>
+                                </select></td>
+                            </tr>
+                          
+        <tr>
+            <td>Card Type:</td>
+            <td>
+                <input type="radio" name="gender" value="visa"><img src="https://www.investopedia.com/thmb/1IVupa7WPkyjIVLKezgBowB52DM=/800x450/filters:fill(auto,1)/full-color-800x450-cee226a48bed4177b90351075b332227.jpg" width="15px" height="10px"> VISA
+                <input type="radio" name="gender" value="amex"><img src ="https://www.pngitem.com/pimgs/m/179-1792533_credit-card-clipart-american-express-amex-logo-png.png" width="15px" height="10px"> AmEx
+                <input type="radio" name="gender" value="mastercard"><img src ="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgntuitVdm4yaXhnmP4j0SLLsSjhmKj4MijQ&usqp=CAU" width="15px" height="10px"> Mastercard
+            </td>
+        </tr>
+        <tr>
+            <td>card number</td>
+            <td><input type="card number" name="card number"></td>
+            <tr>
+                <tr>
+                    <td>security code</td>
+                    <td><input type="password" name="security code"></td>
+                </tr>
+                <tr>
+                    <td>Name On Card:</td>
+                    <td><input type="text" name="name on card"></td>
+                <tr>
+        <tr>
+            <td colspan="2" align="center"><input type="submit" name="Buy" value="BUY IT">
+                <!-- <input type="reset" name="reset" value="reset"> -->
+
+            </td>
+        </tr>
+
+    </table>
+  </form>
+</body>
+</html>

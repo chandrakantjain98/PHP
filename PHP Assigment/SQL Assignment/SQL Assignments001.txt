@@ -1,0 +1,349 @@
+CREATE TABLE student1 (rollno int AUTO_INCREMENT PRIMARY KEY,name varchar(20),branch varchar(20));
+
+INSERT INTO student1 (rollno,name,branch) VALUES(1,"jay","Computer Science");
+INSERT INTO student1 (rollno,name,branch) VALUES(2,"Suhani","Electronic and Com");
+INSERT INTO student1 (rollno,name,branch) VALUES(3,"Kirti","Electronic and Com");
+
+
+CREATE TABLE exam (rollno int AUTO_INCREMENT,student_id int(10),s_code int(10),marks int(10),p_code varchar(10),PRIMARY KEY (rollno),FOREIGN KEY (student_id)REFERENCES student1(rollno));
+
+INSERT INTO exam(rollno,student_id,s_code,marks,p_code)VALUES("1","1","CS11","50","CS");
+INSERT INTO exam(rollno,student_id,s_code,marks,p_code)VALUES("2","2","CS12","60","CS");
+INSERT INTO exam(rollno,student_id,s_code,marks,p_code)VALUES("3","3","CS13","66","EC");Assignment
+
+
+Topic –Database Fundamentals
+Task-1 SQL Practices
+Table Name : C_User
+
+CREATE TABLE C_user  (id int PRIMARY KEY AUTO_INCREMENT, first_name varchar(50),last_name varchar(50),address varchar(30),city varchar(10),age int (10));
+
+INSERT INTO c_user(first_name,last_name,address,city,age) VALUES ("Mickey","Mouse","123 Fantasy Way","Anaheim",73)
+
+INSERT INTO c_user(first_name,last_name,address,city,age) VALUES ("Bat","Man","321 Cavern Ave","Gotham",54);
+
+INSERT INTO c_user(first_name,last_name,address,city,age) VALUES ("Wonder","Woman","987 Truth Way","Paradise",39);
+
+INSERT INTO c_user(first_name,last_name,address,city,age) VALUES ("Donald","Duck","555 Quack Street","Mallard",65);
+
+INSERT INTO c_user(first_name,last_name,address,city,age) VALUES ("Bugs","Bunny","567 Carrot Street","Rascal",58);
+
+INSERT INTO c_user(first_name,last_name,address,city,age) VALUES ("Wiley","Coyote","999 Acme Way","Canyon",61);
+
+INSERT INTO c_user(first_name,last_name,address,city,age) VALUES ("Cat","Woman","234 Purffect Street","Hairball",32);
+
+INSERT INTO c_user(first_name,last_name,address,city,age) VALUES ("Tewwty","Birds","543 Indian Street","Itotltaw",28);
+
+
+
+=>B1.A=>
+CREATE TABLE student(rollno int (20) PRIMARY KEY,name varchar(20),branch VARCHAR(10));
+
+INSERT INTO student(rollno,name,branch)VALUES("1","jay","computer science");
+INSERT INTO student(rollno,name,branch)VALUES("2","suhani","electronice and come");
+INSERT INTO student(rollno,name,branch)VALUES("3","kriti","electronice and come");
+
+=>B2.A=CREATE TABLE exam(rollno int (10),student_id int(10),s_code varchar(10),marks int(10),p_code varchar(10),PRIMARY KEY(rollno),FOREIGN KEY (student_id)REFERENCES student(rollno));
+
+INSERT INTO exam(rollno,student_id,s_code,marks,p_code)VALUES("1","1","cs11","50","cs");
+INSERT INTO exam(rollno,student_id,s_code,marks,p_code)VALUES("2","2","cs12","60","cs");
+INSERT INTO exam(rollno,student_id,s_code,marks,p_code)VALUES("3","3","ec101","66","es");
+INSERT INTO exam(rollno,student_id,s_code,marks,p_code)VALUES("4","4","ec102","70","es");
+INSERT INTO exam(rollno,student_id,s_code,marks,p_code)VALUES("5","5","ec101","45","es");
+INSERT INTO exam(rollno,student_id,s_code,marks,p_code)VALUES("6","6","ec102","50","es");
+
+=>B4.A=CREATE VIEW myviwe as SELECT rollno FROM student;
+
+=>B7.A=A stored procedure is a prepared SQL code that you can save, so the code can be reused over and over again.
+
+=>B8.A=To save the transaction with this updated record, we will create a new savepoint.
+
+
+=>B9.A= trigger is the special type of stored procedure the automaticaklly run when an event occures in the database server.
+
+CREATE TRIGGER ins_sum BEFORE INSERT on exam
+  FOR EACH ROW SET@sum=@sum+new.marks
+
+=>B10.A=a datbase  is a organized collection of structed information or data typiclly stroed electronically in a computer system
+
+=>B11.A=DBMS stand for database managment system & RDBMS stand for relation database managment system
+dbms the data is store as a file ,rdbms the data store in the form of table.
+
+=>B12.A=data redundancy occurs when the same piece of the data is stored in two or more seprate places
+
+=>B13.A= Normalization is the process of organizing data in a database
+
+=>B14.A=the DDL interprets interprets ddl statments and recored the definination in the data dictionary.
+
+=>B15.A= it translates dml statements in a qurey language into low level instruction that the qurey evaluation engine can understand.
+
+=>B16.A= A  transaction is a unit of work that is performed againts a database.
+
+=>B17.A= A stroed procedure is group od statments with a specific name,which are stored inside the database
+
+=.>B18.A=Codd's twelve rules are a set of thirteen rules (numbered zero to twelve) proposed by Edgar F. Codd, a pioneer of the relational model for databases, designed to define what is required from a database management system in order for it to be considered relational.
+
+=>B19.A=data independance is type of data transparency that matters for a centralized database
+
+B20.A=>
+
+1.Hierarchical database model
+2.Relational model
+3.Network model
+4.Object-oriented database model
+5.Entity-relationship model
+6.Document model
+7.Entity-Attribute-Value Model
+8.Star Schema
+
+TABLE=>>2==>>EMPLOYEE
+
+CREATE TABLE employee(employee_id int (20),first_name varchar(20),last_name varchar(20),salary int (20),joining_date_time datetime(6),department varchar(10))
+
+
+INSERT INTO  employee(employee_id,first_name,last_name,salary,joining_date_time,department)VALUES("2","michael","clarke","800000","2013-01-01,12:00:00 am","insurance")
+
+
+INSERT INTO employee(employee_id,first_name,last_name,salary,joining_date_time,department)VALUES("3","roy","thomas","700000","2013-02-01,12:00:00 am","banking")
+
+
+INSERT INTO employee(employee_id,first_name,last_name,salary,joining_date_time,department)VALUES("4","tom","jose","600000","2013-02-01,12:00:00 am","insurance")
+
+
+INSERT INTO employee(employee_id,first_name,last_name,salary,joining_date_time,department)VALUES("5","jerry","pinto","650000","2013-02-01,12:00:00 am","insurance")
+
+
+INSERT INTO employee(employee_id,first_name,last_name,salary,joining_date_time,department)VALUES("6","philip","mathew","750000","2013-01-01,12:00:00 am","services")
+
+
+INSERT INTO employee(employee_id,first_name,last_name,salary,joining_date_time,department)VALUES("7","testname1","123","650000","2013-01-01,12:00:00 am","services")
+
+
+INSERT INTO employee(employee_id,first_name,last_name,salary,joining_date_time,department)VALUES("8","testname2","lname%","600000","2013-01-02,12:00:00 am","insurance")
+
+{TABLE NAME==>> INCENTIVE}
+
+CREATE TABLE incentive(employee_id int(10),incentive datetime(6),incentive_amount int(20))
+
+INSERT INTO incentive(employee_id,incentive,incentive_amount)VALUES("1","2013-02-01","5000");
+INSERT INTO incentive(employee_id,incentive,incentive_amount)VALUES("2","2013-02-01","3000");
+INSERT INTO incentive(employee_id,incentive,incentive_amount)VALUES("3","2013-02-01","4000");
+INSERT INTO incentive(employee_id,incentive,incentive_amount)VALUES("4","2013-01-01","4500");
+INSERT INTO incentive(employee_id,incentive,incentive_amount)VALUES("5","2013-01-01","3500");
+
+
+
+I1.A=SELECT first_name FROM employee;
+I2.A=SELECT first_name,joining_date_time FROM employee;
+I3.A=SELECT*FROM employee ORDER BY first_name DESC;    SELECT*FROM employee ORDER BY salary DESC;
+I4.A=SELECT * FROM employee WHERE last_name LIKE '%o'
+I5.A=SELECT * FROM EMPLOYEE WHERE joining_date_time='01'
+I6.A=SELECT department,SUM(salary)FROM employee GROUP BY department ORDER BY salary DESC;
+I6.A=SELECT department,MAX(salary)FROM employee GROUP BY department ORDER BY DESC;
+I9.A=SELECT MAX(salary) FROM employee ORDER BY salary desc;
+I10.A=SELECT incentive_amount FROM employee,incentive; 
+I11.A=CREATE VIEW myviwe as SELECT first_name,last_name,salary FROM employee;
+ISELECT MAX(salary) as max_salary  FROM employee;
+
+
+==>TABLE 1==>>
+
+CREATE TABLE saleseperson(s_no int(10) PRIMARY KEY,s_name varchar(10),city varchar(10),comm int(10));
+
+INSERT INTO saleseperson(s_no,s_name,city,comm)VALUES("1001","peel","london","12");
+INSERT INTO saleseperson(s_no,s_name,city,comm)VALUES("1002","serres","san jose","13");
+INSERT INTO saleseperson(s_no,s_name,city,comm)VALUES("1004","motika","london","11");
+INSERT INTO saleseperson(s_no,s_name,city,comm)VALUES("1007","rafkin","barcelona","15");
+INSERT INTO saleseperson(s_no,s_name,city,comm)VALUES("1003","Axelrod","new york","1");
+
+
+==>TABLE 2==>>
+
+CREATE TABLE custmore(c_nm int(10),c_name varchar(20),city varchar(10),ratting int(10),S_no int(10),PRIMARY KEY(c_nm),FOREIGN KEY (S_no) REFERENCES saleseperson(s_no));
+
+INSERT INTO custmore(c_nm,c_name,city,ratting,S_no)VALUES("101","hoffman","london","100","1001");
+INSERT INTO custmore(c_nm,c_name,city,ratting,S_no)VALUES("102","giovname","roe","200","1003");
+INSERT INTO custmore(c_nm,c_name,city,ratting,S_no)VALUES("103","liu","sanjose","300","1002");
+INSERT INTO custmore(c_nm,c_name,city,ratting,S_no)VALUES("104","grass","barcelona","100","1002");
+INSERT INTO custmore(c_nm,c_name,city,ratting,S_no)VALUES("105","clemens","london","300","1007");
+INSERT INTO custmore(c_nm,c_name,city,ratting,S_no)VALUES("106","pereira","roe","100","1004");
+
+
+
+==>ORDER_1<==
+CREATE TABLE order_1(o_nm int(10),amt decimal(10),o_de date,c_nm int (10),s_no int(10),PRIMARY KEY(o_nm),FOREIGN KEY (c_nm) REFERENCES custmore(c_nm),FOREIGN KEY(s_no)REFERENCES saleseperson(s_no));
+
+                                      ======>>>>>>INSERT VALUES<<<<<======
+
+INSERT INTO order_1(o_nm,amt,o_de,c_nm,s_no)VALUES("3001","18.69","94-10-3","2008","1007");
+INSERT INTO order_1(o_nm,amt,o_de,c_nm,s_no)VALUES("3003","767","94-10-3","2001","1001");
+INSERT INTO order_1(o_nm,amt,o_de,c_nm,s_no)VALUES("3002","1900","94-10-3","2007","1004");
+INSERT INTO order_1(o_nm,amt,o_de,c_nm,s_no)VALUES("3005","3500","94-10-3","2003","1002");
+INSERT INTO order_1(o_nm,amt,o_de,c_nm,s_no)VALUES("3006","3006","94-10-4","2008","1007");
+INSERT INTO order_1(o_nm,amt,o_de,c_nm,s_no)VALUES("3009","3009","94-10-4","2002","1003");
+INSERT INTO order_1(o_nm,amt,o_de,c_nm,s_no)VALUES("3007","3007","94-10-5","2004","1002");
+INSERT INTO order_1(o_nm,amt,o_de,c_nm,s_no)VALUES("3008","3008","94-10-5","2006","1001");
+INSERT INTO order_1(o_nm,amt,o_de,c_nm,s_no)VALUES("3010","3010","94-10-6","2004","1002");
+INSERT INTO order_1(o_nm,amt,o_de,c_nm,s_no)VALUES("3011","3001","94-10-6","2006","1001");
+
+A1=>SELECT*FROM order_1 WHERE amt>1000
+A2=>SELECT s_name FROM saleseperson WHERE comm >0.10 &city='london';
+A8=>SELECT s_name,city FROM saleseperson WHERE city IN('barcelona','london');
+A9=>SELECT s_name ,comm FROM saleseperson WHERE comm>0.10 &comm<0.12;
+A10=>SELECT c_nm FROM custmore WHERE ratting<=100 OR city='room';
+A11=>SELECT c_nm FROM custmore WHERE city=null;
+A12=>SELECT COUNT(DISTINCT s_no) FROM order_1;
+A13=>SELECT o_de,s_no,MAX(amt) FROM order_1 GROUP BY o_de,s_no ORDER BY o_de,s_no;
+A14=>SELECT amt FROM order_1 WHERE amt>3000
+
+                                           ====>>>CREATE DATABASE: PRACTICES<<<<<===
+
+CREATE TABLE products(products_id int AUTO_INCREMENT PRIMARY KEY,productsname varchar(20),recommedepricecmoney int (20),category varchar(10));
+
+CREATE TABLE custmoree(custmoree_id int AUTO_INCREMENT PRIMARY KEY,firstname varchar(50),lastname varchar(50),city varchar(50),state varchar(10),zip varchar(10));
+
+CREATE TABLE sales(sales_id int AUTO_INCREMENT,product_id int(10),custmoree_id int(10),sales_price int(10),sales_date datetime(6),PRIMARY KEY(sales_id),FOREIGN KEY(custmoree_id) REFERENCES custmoree(custmoree_id));
+
+
+insert data  products table 
+
+INSERT INTO products(productsname,recommedepricecmoney,category)VALUES("dvd","105.00","livingroom");
+INSERT INTO products(productsname,recommedepricecmoney,category)VALUES("microwave","98.00","kitchen");
+INSERT INTO products(productsname,recommedepricecmoney,category)VALUES("monitor","200.00","office");
+INSERT INTO products(productsname,recommedepricecmoney,category)VALUES("speakers","85.00","office");
+INSERT INTO products(productsname,recommedepricecmoney,category)VALUES("refrigerator","900.00","kitchen");
+INSERT INTO products(productsname,recommedepricecmoney,category)VALUES("vcr","165.00","livingroom");
+INSERT INTO products(productsname,recommedepricecmoney,category)VALUES("coffeepot","35.00","kitchen");
+
+
+
+TABLE CUSTOMER
+CREATE TABLE customer(cus_id int(10),firstname varchar(10),lastname varchar(10),city  varchar(10),state varchar(10),zip int(12));
+
+  INSERT VALUE
+INSERT INTO customer(cus_id,firstname,lastname,city,state,zip)VALUES("1","chintn","patel","Anand","GJ","388001");
+INSERT INTO customer(cus_id,firstname,lastname,city,state,zip)VALUES("2","paresh","prajapti","nadiad","GJ","387001");
+INSERT INTO customer(cus_id,firstname,lastname,city,state,zip)VALUES("3","pragnesh","patel","surat","GJ","395008");
+INSERT INTO customer(cus_id,firstname,lastname,city,state,zip)VALUES("4","nilesh","dharsandia","mumbai","MH","400002");
+INSERT INTO customer(cus_id,firstname,lastname,city,state,zip)VALUES("5","sonal","patel","mumbai","MH","40002");
+INSERT INTO customer(cus_id,firstname,lastname,city,state,zip)VALUES("6","harshal","patel","mogri","GJ","388345");
+INSERT INTO customer(cus_id,firstname,lastname,city,state,zip)VALUES("7","parkash","rathod","mogri","GJ","388345");
+INSERT INTO customer(cus_id,firstname,lastname,city,state,zip)VALUES("8","aarzoo","dohiya","rajkot","GJ","360003");
+INSERT INTO customer(cus_id,firstname,lastname,city,state,zip)VALUES("9","heta","dave","varsani","UP","221002");
+INSERT INTO customer(cus_id,firstname,lastname,city,state,zip)VALUES("10","nikita","dave","varsani","UP","221002");
+INSERT INTO customer(cus_id,firstname,lastname,city,state,zip)VALUES("11","vaibhav","patel","varsani","UP","221002");
+INSERT INTO customer(cus_id,firstname,lastname,city,state,zip)VALUES("12","paresh","patel","pune","MH","411001");
+INSERT INTO customer(cus_id,firstname,lastname,city,state,zip)VALUES("13","parkash","patel","pune","MH","411001");
+INSERT INTO customer(cus_id,firstname,lastname,city,state,zip)VALUES("14","sandhya","patel","hyedrabad","AP","500031");
+INSERT INTO customer(cus_id,firstname,lastname,city,state,zip)VALUES("15","divesh","patel","banglore","KA","560002");
+INSERT INTO customer(cus_id,firstname,lastname,city,state,zip)VALUES("16","payal","shah","banglor","KA","560002");
+INSERT INTO customer(cus_id,firstname,lastname,city,state,zip)VALUES("17","priyanka","rana","anand","GJ","388001");
+INSERT INTO customer(cus_id,firstname,lastname,city,state,zip)VALUES("18","sanket","dehbar","v.v.nagar","GJ","388121");
+INSERT INTO customer(cus_id,firstname,lastname,city,state,zip)VALUES("19","puja","shah","varansi","UP","221002");
+INSERT INTO customer(cus_id,firstname,lastname,city,state,zip)VALUES("20","priya","shah","varsani","UP","221002");
+
+ TABLE SALES1
+CREATE TABLE sales1(sales_id int(10),products_id int(10),customer_id int(10),sales_price varchar(10),sales_date datetime(6));
+
+INSERT VALUE 
+
+INSERT INTO sales1(sales_id,products_id,customer_id,sales_price,sales_date)VALUES("1","1","1","130.00","2005-06-14");
+INSERT INTO sales1(sales_id,products_id,customer_id,sales_price,sales_date)VALUES("2","2","2","130.00","2005-06-19");
+INSERT INTO sales1(sales_id,products_id,customer_id,sales_price,sales_date)VALUES("3","3","3","97.00","2005-09-20");
+INSERT INTO sales1(sales_id,products_id,customer_id,sales_price,sales_date)VALUES("4","4","4","80.00","2005-03-22");
+INSERT INTO sales1(sales_id,products_id,customer_id,sales_price,sales_date)VALUES("5","5","5","899.00","2005-01-23");
+INSERT INTO sales1(sales_id,products_id,customer_id,sales_price,sales_date)VALUES("6","6","6","150.00","2005-03-24");
+INSERT INTO sales1(sales_id,products_id,customer_id,sales_price,sales_date)VALUES("7","3","7","209.00","2005-03-10");
+INSERT INTO sales1(sales_id,products_id,customer_id,sales_price,sales_date)VALUES("8","4","8","90.00","2005-08-11");
+INSERT INTO sales1(sales_id,products_id,customer_id,sales_price,sales_date)VALUES("9","6","9","130.00","2005-08-12");
+INSERT INTO sales1(sales_id,products_id,customer_id,sales_price,sales_date)VALUES("10","2","14","85.00","2005-12-13");
+INSERT INTO sales1(sales_id,products_id,customer_id,sales_price,sales_date)VALUES("11","1","15","240.00","2005-05-14");
+INSERT INTO sales1(sales_id,products_id,customer_id,sales_price,sales_date)VALUES("12","2","18","87.00","2005-07-19");
+INSERT INTO sales1(sales_id,products_id,customer_id,sales_price,sales_date)VALUES("13","6","19","99.00","2005-09-20");
+INSERT INTO sales1(sales_id,products_id,customer_id,sales_price,sales_date)VALUES("14","4","5","150.00","2005-07-22");
+INSERT INTO sales1(sales_id,products_id,customer_id,sales_price,sales_date)VALUES("15","6","6","900.00","2005-03-06");
+INSERT INTO sales1(sales_id,products_id,customer_id,sales_price,sales_date)VALUES("16","5","7","86.00","2005-04-07");
+INSERT INTO sales1(sales_id,products_id,customer_id,sales_price,sales_date)VALUES("17","4","8","88.00","2005-11-08");
+INSERT INTO sales1(sales_id,products_id,customer_id,sales_price,sales_date)VALUES("18","2","8","198.00","2005-05-09");
+INSERT INTO sales1(sales_id,products_id,customer_id,sales_price,sales_date)VALUES("19","3","9","150.00","2005-10-10");
+INSERT INTO sales1(sales_id,products_id,customer_id,sales_price,sales_date)VALUES("20","1","14","99.00","2005-05-09");
+INSERT INTO sales1(sales_id,products_id,customer_id,sales_price,sales_date)VALUES("21","6","15","104.00","2005-09-20");
+INSERT INTO sales1(sales_id,products_id,customer_id,sales_price,sales_date)VALUES("22","6","14","90.00","2005-07-22");
+INSERT INTO sales1(sales_id,products_id,customer_id,sales_price,sales_date)VALUES("23","4","1","130.00","2005-03-06");
+INSERT INTO sales1(sales_id,products_id,customer_id,sales_price,sales_date)VALUES("24","1","2","102.00","2005-04-07");
+INSERT INTO sales1(sales_id,products_id,customer_id,sales_price,sales_date)VALUES("25","2","3","114.00","2005-11-08");
+INSERT INTO sales1(sales_id,products_id,customer_id,sales_price,sales_date)VALUES("26","1","4","1000.00","2005-05-09");
+INSERT INTO sales1(sales_id,products_id,customer_id,sales_price,sales_date)VALUES("27","5","5","1100.00","2005-10-10");
+INSERT INTO sales1(sales_id,products_id,customer_id,sales_price,sales_date)VALUES("28","5","6","285.00","2005-06-11");
+INSERT INTO sales1(sales_id,products_id,customer_id,sales_price,sales_date)VALUES("29","3","7","87.00","2005-10-12");
+INSERT INTO sales1(sales_id,products_id,customer_id,sales_price,sales_date)VALUES("30","2","8","300.00","2005-07-13");
+INSERT INTO sales1(sales_id,products_id,customer_id,sales_price,sales_date)VALUES("31","3","20","205.00","2005-12-31");
+
+
+
+
+
+
+task
+
+EMPLOYEE 
+
+CREATE TABLE employee(e_no int(10),e_name varchar(10),title varchar(10),d_nm varchar(10),salary int(10));
+
+ insert value
+ INSERT INTO employee(e_no,e_name,title,d_nm,salary)VALUES("1","rohan","tata","account","30000");
+INSERT INTO employee(e_no,e_name,title,d_nm,salary)VALUES("2","rohit","vidiocon","salary","35000");
+INSERT INTO employee(e_no,e_name,title,d_nm,salary)VALUES("3","ketan","relince","banking","40000");
+INSERT INTO employee(e_no,e_name,title,d_nm,salary)VALUES("4","vipul","ccc","hr","50000");
+INSERT INTO employee(e_no,e_name,title,d_nm,salary)VALUES("6","nilesh","lg","sales","360000");
+
+PROJECT
+
+CREATE table project(p_no int(5),p_name varchar(5),bugdget int(10),d_nm varchar(10));
+
+insert value
+
+INSERT INTO project(p_no,p_name,bugdget,d_nm)VALUES("1","e commerec","10000","banking");
+INSERT INTO project(p_no,p_name,bugdget,d_nm)VALUES("2","mangment","40000","mange");
+INSERT INTO project(p_no,p_name,bugdget,d_nm)VALUES("3","shopping","30000","sales");;
+INSERT INTO project(p_no,p_name,bugdget,d_nm)VALUES("4","commerec","10000","banking");
+INSERT INTO project(p_no,p_name,bugdget,d_nm)VALUES("5","coolege","20000","eduection");
+INSERT INTO project(p_no,p_name,bugdget,d_nm)VALUES("6","hospita","50000","helth");
+
+
+DEPARTMENT
+
+CREATE TABLE dep(dno int(10),dname varchar(10),mgreno int(10));
+ 
+INSERT VALUE 
+INSERT INTO dep(dno,dname,mgreno)VALUES("1","banking","2");
+INSERT INTO dep(dno,dname,mgreno)VALUES("2","account","4");
+INSERT INTO dep(dno,dname,mgreno)VALUES("3","salary","5");
+INSERT INTO dep(dno,dname,mgreno)VALUES("4","hr","6");
+INSERT INTO dep(dno,dname,mgreno)VALUES("5","marketing","7");
+INSERT INTO dep(dno,dname,mgreno)VALUES("6","finace","8");
+
+WORKS
+
+CREATE TABLE works(e_no int(10),p_no int(10),resp varchar(10),houres time(6));
+ INSERT VALUE
+
+INSERT INTO WORKS(e_no,p_no,resp,houres)VALUES("1","1","11","12:20:10");
+INSERT INTO WORKS(e_no,p_no,resp,houres)VALUES("2","2","11","11:20:10");
+INSERT INTO WORKS(e_no,p_no,resp,houres)VALUES("3","3","12","4:20:10");
+INSERT INTO WORKS(e_no,p_no,resp,houres)VALUES("4","4","15","10:20:10");
+INSERT INTO WORKS(e_no,p_no,resp,houres)VALUES("5","5","16","7:20:10");
+INSERT INTO WORKS(e_no,p_no,resp,houres)VALUES("6","6","12","11:20:10");
+ 
+
+
+1.SELECT p_no,p_name FROM project WHERE bugdget>100000
+2.SELECT*FROM works WHERE houres<10 AND resp-'manager'
+3.SELECT e_no,e_name FROM employee WHERE(title -'tata' OR title-'vidicon')AND salary >35000;
+4.SELECT e_name FROM employee WHERE d_nm ="account"ORDER BY salary DESC;
+5.SELECT* FROM dep ORDER BY dname ASC;
+6.SELECT e_name,d_nm,title FROM employee,dep WHER emp_no
+7.SELECT p_name,hours,project.p_no FROM works,project WHERE houres>10 AND project.p_no- works.p_no
+8.SELECT p_name,d_nm,bugdget FROM project,dep WHERE bugdget<50000
+9.SELECT e_no,salary FROM employee WHERE d_nm='account' ORDER BY salary DESC;
+10.SELECT e_name,p_n0,title,salary FROM employee  WHERE d_nm;
